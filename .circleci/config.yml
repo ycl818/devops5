@@ -21,10 +21,10 @@ jobs:
       - run:
           name: run tests
           command: |
-            touch junit.xml
+            cd calculator
             . venv/bin/activate
             # pytest -v --cov=calculator
-            pytest –-junitxml=junit.xml
+            pytest –-junitxml=test-results/junit.xml
       - store_test_results:
           path: test-results
       - store_artifacts:
