@@ -23,7 +23,7 @@ jobs:
           command: |
             . venv/bin/activate
             # pytest -v --cov=calculator
-            pytest –-junitxml=test-results/junit.xml
+            pytest –-junitxml=junit.xml
       - store_test_results:
           path: test-results
       - store_artifacts:
