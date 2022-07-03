@@ -1,0 +1,13 @@
+argon2-cffi==21.1.0
+async-generator==1.10
+attrs==21.2.0
+bcrypt==3.2.0
+bleach=3.3.0
+blinker==1.4
+certifi==2020.6.20
+chardet==4.0.0
+cffi==1.14.5
+flake8==4.0.1
+pyflakes==2.4.0
+pytest==7.1.2
+pytest-cov==3.0.0
