@@ -1,0 +1,30 @@
+#Python CurcleCi 2.0 configuration file
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.7
+
+    working_directory: ~/devops5
+      
+    steps:
+      #1 Obtain repo from Github
+      - checkout
+      #2 Create a virtual environment and install dependencies
+      - run:
+          name: install dependencies
+          command: | 
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+        #3 Run coding convention software plus tester.
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            mkdir test-results
+            pytest –-junitxml=test-results/junit.xml
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
